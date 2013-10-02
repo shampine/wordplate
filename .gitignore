@@ -33,4 +33,4 @@ public/wp-content/uploads/*
 public/wp-content/wp-cache-config.php
 
 # Include these files in previously blocked directories
-!wp-content/uploads/.htaccess
+!public/wp-content/uploads/.htaccess
