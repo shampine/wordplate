@@ -20,18 +20,17 @@ sitemap.xml
 sitemap.xml.gz
 Thumbs.db
 wp-config.php
-wp-content/advanced-cache.php
-wp-content/cache/
-wp-content/cache/*
-wp-content/backup/*
-wp-content/backups/
-wp-content/backup-db/
-wp-content/blogs.dir/
-wp-content/cache/*
-wp-content/cache/supercache/*
-wp-content/upgrade/*
-wp-content/uploads/*
-wp-content/wp-cache-config.php
+public/wp-content/advanced-cache.php
+public/wp-content/cache/*
+public/wp-content/backup/*
+public/wp-content/backups/*
+public/wp-content/backup-db/*
+public/wp-content/blogs.dir/*
+public/wp-content/cache/*
+public/wp-content/cache/supercache/*
+public/wp-content/upgrade/*
+public/wp-content/uploads/*
+public/wp-content/wp-cache-config.php
 
 # Include these files in previously blocked directories
 !wp-content/uploads/.htaccess
