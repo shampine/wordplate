@@ -33,6 +33,10 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+/** Update Site URLs **/
+define('WP_HOME','http://sitename.com');
+define('WP_SITEURL','http://sitename.com');
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -60,6 +64,12 @@ define('NONCE_SALT',       'put your unique phrase here');
  * prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix  = 'wp_';
+
+/**
+* Limits total Post Revisions saved per Post/Page.
+* Change or comment this line out if you would like to increase or remove the limit.
+*/
+define('WP_POST_REVISIONS',  2);
 
 /**
  * WordPress Localized Language, defaults to English.
