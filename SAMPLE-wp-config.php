@@ -37,6 +37,17 @@ define('DB_COLLATE', '');
 define('WP_HOME','http://sitename.com');
 define('WP_SITEURL','http://sitename.com');
 
+/** Stop CF7 from loading on every page 
+ * You need to run prior to get_header() on any page you would like CF7 to run
+ * if ( function_exists( 'wpcf7_enqueue_scripts' ) ) {
+ *		wpcf7_enqueue_scripts();
+ *		wpcf7_enqueue_styles();
+ * }
+ *
+ */
+define('WPCF7_LOAD_JS', false);
+define('WPCF7_LOAD_CSS', false);
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
