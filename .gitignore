@@ -20,6 +20,8 @@ sitemap.xml
 sitemap.xml.gz
 Thumbs.db
 wp-config.php
+.sass-cache/
+node_modules/
 public/wp-content/advanced-cache.php
 public/wp-content/cache/*
 public/wp-content/backup/*
