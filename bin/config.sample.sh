@@ -4,7 +4,7 @@
 #
 production_database=db_production
 production_username=root
-production_password=password
+production_password='password'
 # ssh user and server, or blank (e.g. remoteuser@remoteserver)
 production_ssh=
 production_webroot=
