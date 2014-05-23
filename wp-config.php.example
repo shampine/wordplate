@@ -34,8 +34,8 @@ define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 /** Update Site URLs **/
-define('WP_HOME','http://sitename.com');
-define('WP_SITEURL','http://sitename.com');
+define('WP_HOME','http://example.com');
+define('WP_SITEURL','http://example.com');
 
 
 /**#@+
