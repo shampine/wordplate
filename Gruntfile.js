@@ -12,7 +12,7 @@ module.exports = function (grunt) {
     uglify: {
       min: {
         files: {
-          'public/wp-content/themes/wpps-boilerplate/js/main.js': ['public/wp-content/themes/wpps-boilerplate/js/src/libs/*.js','public/wp-content/themes/wpps-boilerplate/js/src/*.js']
+          'public/wp-content/themes/wordplate/js/main.js': ['public/wp-content/themes/wordplate/js/src/libs/*.js','public/wp-content/themes/wordplate/js/src/*.js']
         }
       }
     },
@@ -20,10 +20,10 @@ module.exports = function (grunt) {
     compass: {
       dist: {
         options: {
-          config: 'public/wp-content/themes/wpps-boilerplate/css/config.rb',
-          sassDir: 'public/wp-content/themes/wpps-boilerplate/css/sass',
-          imagesDir: 'public/wp-content/themes/wpps-boilerplate/img',
-          cssDir: 'public/wp-content/themes/wpps-boilerplate/css',
+          config: 'public/wp-content/themes/wordplate/css/config.rb',
+          sassDir: 'public/wp-content/themes/wordplate/css/sass',
+          imagesDir: 'public/wp-content/themes/wordplate/img',
+          cssDir: 'public/wp-content/themes/wordplate/css',
           environment: 'production',
           outputStyle: 'compressed',
           force: true
@@ -35,16 +35,16 @@ module.exports = function (grunt) {
       dynamic: {
         files: [{
           expand: true,
-          cwd: 'public/wp-content/themes/wpps-boilerplate/img/src',
+          cwd: 'public/wp-content/themes/wordplate/img/src',
           src: ['*.{png,jpg,gif}'],
-          dest: 'public/wp-content/themes/wpps-boilerplate/img/'
+          dest: 'public/wp-content/themes/wordplate/img/'
         }]
       }
     },
 
     browser_sync: {
       files: {
-        src: 'public/wp-content/themes/wpps-boilerplate/css/screen.css'
+        src: 'public/wp-content/themes/wordplate/css/screen.css'
       },
       options: {
           host: "localhost",
@@ -57,15 +57,15 @@ module.exports = function (grunt) {
         livereload: true
       },
       scripts: {
-        files: ['public/wp-content/themes/wpps-boilerplate/js/src/*.js','public/wp-content/themes/wpps-boilerplate/js/src/libs/*.js'],
+        files: ['public/wp-content/themes/wordplate/js/src/*.js','public/wp-content/themes/wordplate/js/src/libs/*.js'],
         tasks: ['uglify']
       },
       styles: {
-        files: ['public/wp-content/themes/wpps-boilerplate/css/**/*.{sass,scss}','public/wp-content/themes/wpps-boilerplate/img/ui/*.png'],
+        files: ['public/wp-content/themes/wordplate/css/**/*.{sass,scss}','public/wp-content/themes/wordplate/img/ui/*.png'],
         tasks: ['compass']
       },
       images: {
-        files: ['public/wp-content/themes/wpps-boilerplate/img/src/*.{png,jpg,gif}'],
+        files: ['public/wp-content/themes/wordplate/img/src/*.{png,jpg,gif}'],
         tasks: ['imagemin']
       }
     },
