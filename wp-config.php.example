@@ -14,18 +14,77 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
+$env_default = array(
+  'name'             => 'default',
+  'hostname'         => 'http://example.com',
+  'debug'            => false,
+  'db_name'          => 'example_prod',
+  'db_user'          => 'example',
+  'db_pass'          => 'password',
+  'db_host'          => 'localhost',
+  'cache'            => true,
+  'password_protect' => false
+);
 
-/** MySQL database username */
-define('DB_USER', 'username_here');
+$env_local = array_merge($env_default, array(
+  'name'             => 'local',
+  'hostname'         => 'http://wordplate.dev',
+  'debug'            => true,
+  'db_name'          => 'wordplate_dev',
+  'db_user'          => 'root',
+  'db_pass'          => '',
+  'cache'            => false
+));
 
-/** MySQL database password */
-define('DB_PASSWORD', 'password_here');
+$env_staging = array_merge($env_default, array(
+  'name'             => 'staging',
+  'hostname'         => 'http://staging.example.com',
+  'debug'            => true,
+  'db_name'          => 'wordplate_staging',
+  'cache'            => false,         
+  'password_protect' => true
+));
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+$production = array_merge($env_default, array(
+  'name'             => 'production',
+  'hostname'         => 'http://example.com'
+));
+
+
+if (file_exists(dirname(__FILE__).'/env_local')) {
+
+  // Local Environment
+  $environment = $env_local;
+
+} elseif(file_exists(dirname(__FILE__).'/env_staging')) {
+
+  // Staging Environment
+  $environment = $env_staging;
+
+} else {
+
+  // Production Environment
+  $environment = $production;
+
+}
+
+/** Environment settings **/
+define('WP_ENV',   $environment['name']);
+define('WP_DEBUG', $environment['debug']);
+define('WP_PASSWORD_PROTECT', $environment['password_protect']);
+
+/** Sets the environment urls **/
+define('WP_HOME',    $environment['hostname']);
+define('WP_SITEURL', $environment['hostname']);
+
+/** Defines whether caching is enabled **/
+define('WP_CACHE', $environment['cache']);
+
+/** Database connection settings **/
+define('DB_NAME',  $environment['db_name']);
+define('DB_USER',  $environment['db_user']);
+define('DB_HOST',  $environment['db_host']);
+define('DB_PASSWORD', $environment['db_pass']);
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -33,9 +92,13 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
-/** Update Site URLs **/
-define('WP_HOME','http://example.com');
-define('WP_SITEURL','http://example.com');
+/** Rename the /wp-content/ dir **/
+define('WP_CONTENT_FOLDERNAME', 'assets'); 
+define('WP_CONTENT_DIR', ABSPATH.WP_CONTENT_FOLDERNAME);
+define('WP_CONTENT_URL', WP_SITEURL.'/'.WP_CONTENT_FOLDERNAME);
+
+/** Allow direct access to the filesystem **/
+define('FS_METHOD', 'direct');
 
 
 /**#@+
@@ -47,14 +110,14 @@ define('WP_SITEURL','http://example.com');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('AUTH_KEY',         'VzveQ,Qc*YM|uY/dfVsA>1+/G)0=h+@jK)7M=FD+;ov+k3=-o1_ijP~ML~J~fPmO');
+define('SECURE_AUTH_KEY',  'K:$|Osq]QD:5;,1|Xx>LT)q0Oufl1~O``TdT>j/zx}aFCt/kg${1;*ju%G.K6w8R');
+define('LOGGED_IN_KEY',    'Y>5{jb;L|M|*WZ/vDaK-)E$bY.%!HN_6|D.{Q[85oOD!Vci^WS+R.z?<Ta~*F~V&');
+define('NONCE_KEY',        'zjIfU<i)=!!-fz1A1gT5Z_BraFuW7Q@E,aynhO^/ fzla9A#uL4Va>d|%U(-J&;d');
+define('AUTH_SALT',        'lZGK7kYP482y)w2i%}M#)2H5~1XS}D5x-v[f[Ptwx$Ap0q4)O8Pgmb-q&~pn*$(^');
+define('SECURE_AUTH_SALT', 'D|<j~+<hEr=inv4a#Hv:-)Nz#/ |+Au0jK]Ke_.iCfJh3_}j0[t5Xo5$.LFD(ua&');
+define('LOGGED_IN_SALT',   'O%uop?>|{bLh>W6w>|7Q#jz%].N`>.8{N{_eNzYfwsmi!.~flvR^<.m1/<-7z_6M');
+define('NONCE_SALT',       '!j+;jOZux}iwrxAY *_njlU#RP]%+3CO6?W_L>i m++X[<A8Eb.U-v4|p)0~4wtG');
 
 /**#@-*/
 

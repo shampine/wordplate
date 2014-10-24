@@ -11,6 +11,8 @@
 .svn
 *.Trashes
 Bing*.xml
+env_local
+env_staging
 google*.html
 readme.html
 robots.txt
