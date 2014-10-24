@@ -14,6 +14,18 @@ module.exports = function (grunt) {
         files: {
           'public/wp-content/themes/wordplate/js/main.js': 
             [
+              'public/wp-content/themes/wordplate/js/src/bootstrap/affix.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/alert.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/button.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/carousel.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/collapse.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/dropdown.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/modal.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/tooltip.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/popover.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/scrollspy.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/tab.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/transition.js',
               'public/wp-content/themes/wordplate/js/src/libs/*.js',
               'public/wp-content/themes/wordplate/js/src/*.js'
             ]
@@ -26,6 +38,18 @@ module.exports = function (grunt) {
         files: {
           'public/wp-content/themes/wordplate/js/main.js': 
             [
+              'public/wp-content/themes/wordplate/js/src/bootstrap/affix.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/alert.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/button.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/carousel.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/collapse.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/dropdown.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/modal.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/tooltip.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/popover.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/scrollspy.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/tab.js',
+              'public/wp-content/themes/wordplate/js/src/bootstrap/transition.js',
               'public/wp-content/themes/wordplate/js/src/libs/*.js',
               'public/wp-content/themes/wordplate/js/src/*.js'
             ]
