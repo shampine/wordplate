@@ -11,7 +11,7 @@ add_action('wp_enqueue_scripts','wpps_stylesheet');
 function wpps_javascript() {
   if (!is_admin()) {
     wp_deregister_script('jquery');
-    wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', false, null, true);
+    wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', false, null, true);
     wp_enqueue_script('main', get_bloginfo('template_directory') . '/js/main.js', array('jquery'), null, true);
   }
 }
@@ -48,10 +48,11 @@ add_filter( 'wp_nav_menu', 'remove_ul' );
 // Add socket.io snippet to enable Browser Sync
 if($environment['name'] == 'local') {
   function add_browser_sync() {
-    echo "
-      <script src='http://localhost:3000/socket.io/socket.io.js'></script>
-      <script src='http://localhost:3001/browser-sync-client.min.js'></script>
-    ";
+    echo '
+      <script type=\'text/javascript\'>//<![CDATA[
+          document.write("<script async src=\'//HOST:3000/browser-sync/browser-sync-client.1.5.8.js\'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
+      //]]></script>
+    ';
   }
   add_action('wp_footer','add_browser_sync');
 }

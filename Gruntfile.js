@@ -12,7 +12,23 @@ module.exports = function (grunt) {
     uglify: {
       min: {
         files: {
-          'public/wp-content/themes/wordplate/js/main.js': ['public/wp-content/themes/wordplate/js/src/libs/*.js','public/wp-content/themes/wordplate/js/src/*.js']
+          'public/wp-content/themes/wordplate/js/main.js': 
+            [
+              'public/wp-content/themes/wordplate/js/src/libs/*.js',
+              'public/wp-content/themes/wordplate/js/src/*.js'
+            ]
+        }
+      }
+    },
+
+    concat: {
+      min: {
+        files: {
+          'public/wp-content/themes/wordplate/js/main.js': 
+            [
+              'public/wp-content/themes/wordplate/js/src/libs/*.js',
+              'public/wp-content/themes/wordplate/js/src/*.js'
+            ]
         }
       }
     },
@@ -31,18 +47,7 @@ module.exports = function (grunt) {
       }
     },
 
-    imagemin: {
-      dynamic: {
-        files: [{
-          expand: true,
-          cwd: 'public/wp-content/themes/wordplate/img/src',
-          src: ['*.{png,jpg,gif}'],
-          dest: 'public/wp-content/themes/wordplate/img/'
-        }]
-      }
-    },
-
-    browser_sync: {
+    browserSync: {
       files: {
         src: 'public/wp-content/themes/wordplate/css/screen.css'
       },
@@ -63,15 +68,12 @@ module.exports = function (grunt) {
       styles: {
         files: ['public/wp-content/themes/wordplate/css/**/*.{sass,scss}','public/wp-content/themes/wordplate/img/ui/*.png'],
         tasks: ['compass']
-      },
-      images: {
-        files: ['public/wp-content/themes/wordplate/img/src/*.{png,jpg,gif}'],
-        tasks: ['imagemin']
       }
     },
   });
  
-  // Development task checks and concatenates JS, compiles SASS preserving comments and nesting, runs dev server, and starts watch
-  grunt.registerTask('default', ['compass', 'uglify', 'imagemin', 'browser_sync', 'watch']);
+  // Default builds for production, run dev for unminified js
+  grunt.registerTask('dev', ['compass', 'concat']);
+  grunt.registerTask('default', ['compass', 'uglify', 'browserSync', 'watch']);
  
  }
