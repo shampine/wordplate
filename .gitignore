@@ -1,5 +1,4 @@
 # Exclude these files from the git repo
-
 *~
 *[Tt]humbs.db
 *.bak
@@ -24,17 +23,17 @@ Thumbs.db
 wp-config.php
 .sass-cache/
 node_modules/
-public/wp-content/advanced-cache.php
-public/wp-content/cache/*
-public/wp-content/backup/*
-public/wp-content/backups/*
-public/wp-content/backup-db/*
-public/wp-content/blogs.dir/*
-public/wp-content/cache/*
-public/wp-content/cache/supercache/*
-public/wp-content/upgrade/*
-public/wp-content/uploads/*
-public/wp-content/wp-cache-config.php
+public/assets/advanced-cache.php
+public/assets/cache/*
+public/assets/backup/*
+public/assets/backups/*
+public/assets/backup-db/*
+public/assets/blogs.dir/*
+public/assets/cache/*
+public/assets/cache/supercache/*
+public/assets/upgrade/*
+public/assets/uploads/*
+public/assets/wp-cache-config.php
 
 # Include these files in previously blocked directories
 !public/wp-content/uploads/.htaccess
