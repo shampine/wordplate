@@ -110,14 +110,14 @@ define('FS_METHOD', 'direct');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'VzveQ,Qc*YM|uY/dfVsA>1+/G)0=h+@jK)7M=FD+;ov+k3=-o1_ijP~ML~J~fPmO');
-define('SECURE_AUTH_KEY',  'K:$|Osq]QD:5;,1|Xx>LT)q0Oufl1~O``TdT>j/zx}aFCt/kg${1;*ju%G.K6w8R');
-define('LOGGED_IN_KEY',    'Y>5{jb;L|M|*WZ/vDaK-)E$bY.%!HN_6|D.{Q[85oOD!Vci^WS+R.z?<Ta~*F~V&');
-define('NONCE_KEY',        'zjIfU<i)=!!-fz1A1gT5Z_BraFuW7Q@E,aynhO^/ fzla9A#uL4Va>d|%U(-J&;d');
-define('AUTH_SALT',        'lZGK7kYP482y)w2i%}M#)2H5~1XS}D5x-v[f[Ptwx$Ap0q4)O8Pgmb-q&~pn*$(^');
-define('SECURE_AUTH_SALT', 'D|<j~+<hEr=inv4a#Hv:-)Nz#/ |+Au0jK]Ke_.iCfJh3_}j0[t5Xo5$.LFD(ua&');
-define('LOGGED_IN_SALT',   'O%uop?>|{bLh>W6w>|7Q#jz%].N`>.8{N{_eNzYfwsmi!.~flvR^<.m1/<-7z_6M');
-define('NONCE_SALT',       '!j+;jOZux}iwrxAY *_njlU#RP]%+3CO6?W_L>i m++X[<A8Eb.U-v4|p)0~4wtG');
+define('AUTH_KEY',         'SET_YOUR_KEYS_AND_SALTS');
+define('SECURE_AUTH_KEY',  'SET_YOUR_KEYS_AND_SALTS');
+define('LOGGED_IN_KEY',    'SET_YOUR_KEYS_AND_SALTS');
+define('NONCE_KEY',        'SET_YOUR_KEYS_AND_SALTS');
+define('AUTH_SALT',        'SET_YOUR_KEYS_AND_SALTS');
+define('SECURE_AUTH_SALT', 'SET_YOUR_KEYS_AND_SALTS');
+define('LOGGED_IN_SALT',   'SET_YOUR_KEYS_AND_SALTS');
+define('NONCE_SALT',       'SET_YOUR_KEYS_AND_SALTS');
 
 /**#@-*/
 
